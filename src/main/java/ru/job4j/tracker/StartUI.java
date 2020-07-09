@@ -21,25 +21,21 @@ public class StartUI {
                 System.out.println("=== Show all items ====");
                 System.out.println("=Id=\t=Name=");
                 Item[] out = tracker.findAll();
-                for (int index = 0; index < out.length; index++) {
-                    System.out.println(out[index].getId() + "\t\t" + out[index].getName());
+                for (Item cell : out) {
+                    System.out.println(cell);
                 }
             } else if (select == 2) {
                 System.out.println("=== Edit item ====");
                 System.out.print("Enter Id to edit: ");
                 int id = Integer.valueOf(scanner.nextLine());
-                if (tracker.findById(id) != null) {
-                    System.out.print("Enter new Name: ");
-                    String name = scanner.nextLine();
-                    Item item = new Item();
-                    item.setName(name);
-                    if (tracker.replace(id, item)) {
-                        System.out.println("Edit successful");
-                    } else {
-                        System.out.println("Error edit");
-                    }
+                System.out.print("Enter new Name: ");
+                String name = scanner.nextLine();
+                Item item = new Item();
+                item.setName(name);
+                if (tracker.replace(id, item)) {
+                    System.out.println("Edit successful");
                 } else {
-                    System.out.println("Error, id not found");
+                    System.out.println("Error edit");
                 }
             } else if (select == 3) {
                 System.out.println("=== Delete item ====");
@@ -56,8 +52,7 @@ public class StartUI {
                 int id = Integer.valueOf(scanner.nextLine());
                 Item out = tracker.findById(id);
                 if (out != null) {
-                    System.out.println("Found record:" + System.lineSeparator()
-                            + "=Id=\t=Name=" + System.lineSeparator() + out.getId() + "\t\t" + out.getName());
+                    System.out.println("Found record:\n=Id=\t=Name=\n" + out);
                 } else {
                     System.out.println("Error, id not found");
                 }
@@ -67,9 +62,10 @@ public class StartUI {
                 String name = scanner.nextLine();
                 Item[] out = tracker.findByName(name);
                 if (out.length != 0) {
-                    System.out.println("Found record:" + System.lineSeparator() + "=Id=\t=Name=");
-                    for (int index = 0; index < out.length; index++) {
-                        System.out.println(out[index].getId() + "\t\t" + out[index].getName());
+                    String plural = out.length > 1 ? "s" : "";
+                    System.out.println("Found record" + plural + ":\n=Id=\t=Name=");
+                    for (Item cell : out) {
+                        System.out.println(cell);
                     }
                 } else {
                     System.out.println("Nothing found");
