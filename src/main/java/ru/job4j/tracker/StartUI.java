@@ -66,11 +66,13 @@ public class StartUI {
                 System.out.print("Enter name: ");
                 String name = scanner.nextLine();
                 Item[] out = tracker.findByName(name);
-                if (out != null) {
+                if (out.length != 0) {
                     System.out.println("Found record:" + System.lineSeparator() + "=Id=\t=Name=");
                     for (int index = 0; index < out.length; index++) {
                         System.out.println(out[index].getId() + "\t\t" + out[index].getName());
                     }
+                } else {
+                    System.out.println("Nothing found");
                 }
             } else if (select == 6) {
                 run = false;
