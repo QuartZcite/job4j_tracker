@@ -4,6 +4,17 @@ public class Item {
     private int id;
     private String name;
 
+    public Item() {
+    }
+
+    public Item(String name) {
+        this.name = name;
+    }
+
+    public Item(int id) {
+        this.id = id;
+    }
+
     @Override
     public String toString() {
         return " " + id + "\t\t" + name;
