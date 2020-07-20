@@ -14,8 +14,12 @@ public class StartUI {
         System.out.println("\n=== Show all items ====");
         System.out.println("=Id=\t=Name=");
         Item[] out = tracker.findAll();
-        for (Item cell : out) {
-            System.out.println(cell);
+        if (out.length != 0) {
+            for (Item cell : out) {
+                System.out.println(cell);
+            }
+        } else {
+                System.out.println("Nothing found");
         }
     }
 
