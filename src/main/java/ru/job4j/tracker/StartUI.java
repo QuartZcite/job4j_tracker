@@ -1,8 +1,6 @@
 package ru.job4j.tracker;
 
 
-import javax.sound.midi.Track;
-
 public class StartUI {
     public static void createItem(Input input, Tracker tracker) {
         System.out.println("\n=== Create a new Item ====");
@@ -21,7 +19,7 @@ public class StartUI {
         }
     }
 
-    public static void editItem(Input input, Tracker tracker) {
+    public static void replaceItem(Input input, Tracker tracker) {
         System.out.println("\n=== Edit item ====");
         int id = input.askInt("Enter Id to edit: ");
         String name = input.askStr("Enter new Name: ");
@@ -80,7 +78,7 @@ public class StartUI {
             } else if (select == 1) {
                 StartUI.showAll(input, tracker);
             } else if (select == 2) {
-                StartUI.editItem(input, tracker);
+                StartUI.replaceItem(input, tracker);
             } else if (select == 3) {
                 StartUI.deleteItem(input, tracker);
             } else if (select == 4) {
