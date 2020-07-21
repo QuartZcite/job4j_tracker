@@ -19,7 +19,7 @@ public class StartUI {
                 System.out.println(cell);
             }
         } else {
-                System.out.println("Nothing found");
+            System.out.println("Nothing found");
         }
     }
 
