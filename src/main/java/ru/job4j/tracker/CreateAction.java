@@ -8,7 +8,7 @@ public class CreateAction implements UserAction {
 
     @Override
     public boolean execute(Input input, Tracker tracker) {
-        String name = input.askStr("\nEnter name: ");
+        String name = input.askStr(System.lineSeparator() + "Enter name: ");
         Item item = new Item(name);
         tracker.add(item);
         return true;

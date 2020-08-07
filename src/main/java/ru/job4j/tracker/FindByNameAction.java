@@ -7,16 +7,19 @@ public class FindByNameAction implements UserAction {
     }
     @Override
     public boolean execute(Input input, Tracker tracker) {
-        String name = input.askStr("\nEnter name: ");
+        String name = input.askStr(System.lineSeparator() + "Enter name: ");
         Item[] item = tracker.findByName(name);
         if (item.length != 0) {
             String plural = item.length > 1 ? "s" : "";
-            System.out.println("\nFound record" + plural + ":\n=Id=\t=Name=");
+            System.out.println(System.lineSeparator()
+                    + "Found record" + plural + ":"
+                    + System.lineSeparator()
+                    + "=Id=\t=Name=");
             for (Item cell : item) {
                 System.out.println(cell);
             }
         } else {
-            System.out.println("\nNothing found");
+            System.out.println(System.lineSeparator() + "Nothing found");
         }
         return true;
     }

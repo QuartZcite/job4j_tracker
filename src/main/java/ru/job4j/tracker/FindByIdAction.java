@@ -7,12 +7,16 @@ public class FindByIdAction implements UserAction {
     }
     @Override
     public boolean execute(Input input, Tracker tracker) {
-        int id = input.askInt("\nEnter Id: ");
+        int id = input.askInt(System.lineSeparator() + "Enter Id: ");
         Item item = tracker.findById(id);
         if (item != null) {
-            System.out.println("\nFound record:\n=Id=\t=Name=\n" + item);
+            System.out.println(System.lineSeparator() + "Found record:"
+                    + System.lineSeparator()
+                    + "=Id=\t=Name="
+                    + System.lineSeparator()
+                    + item);
         } else {
-            System.out.println("\nError, id not found");
+            System.out.println(System.lineSeparator() + "Error, id not found");
         }
         return true;
     }
