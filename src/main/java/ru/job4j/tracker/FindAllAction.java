@@ -7,7 +7,7 @@ public class FindAllAction implements UserAction {
     }
     @Override
     public boolean execute(Input input, Tracker tracker) {
-        System.out.println(System.lineSeparator() + "\"=Id=\\t=Name=\"");
+        System.out.println(System.lineSeparator() + "\"=Id=\t=Name=\"");
         Item[] item = tracker.findAll();
         if (item.length != 0) {
             for (Item cell : item) {

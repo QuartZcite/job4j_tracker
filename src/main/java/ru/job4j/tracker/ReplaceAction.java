@@ -8,8 +8,8 @@ public class ReplaceAction implements UserAction {
 
     @Override
     public boolean execute(Input input, Tracker tracker) {
-        String name = input.askStr(System.lineSeparator() + "Enter Id to edit: ");
-        int id = input.askInt("Enter new Name: ");
+        int id = input.askInt("Enter Id to edit: ");
+        String name = input.askStr("Enter new Name: ");
         Item item = new Item(name);
         tracker.replace(id, item);
         if (tracker.replace(id, item)) {
