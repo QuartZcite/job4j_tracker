@@ -16,13 +16,13 @@ public class FindByIdAction implements UserAction {
         int id = input.askInt(System.lineSeparator() + "Enter Id: ");
         Item item = tracker.findById(id);
         if (item != null) {
-            System.out.println(System.lineSeparator() + "Found record:"
+            out.println(System.lineSeparator() + "Found record:"
                     + System.lineSeparator()
                     + "=Id=\t=Name="
                     + System.lineSeparator()
                     + item);
         } else {
-            System.out.println(System.lineSeparator() + "Error, id not found");
+            out.println(System.lineSeparator() + "Error, id not found");
         }
         return true;
     }

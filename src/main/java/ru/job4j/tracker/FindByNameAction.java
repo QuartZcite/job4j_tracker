@@ -17,15 +17,15 @@ public class FindByNameAction implements UserAction {
         Item[] item = tracker.findByName(name);
         if (item.length != 0) {
             String plural = item.length > 1 ? "s" : "";
-            System.out.println(System.lineSeparator()
+            out.println(System.lineSeparator()
                     + "Found record" + plural + ":"
                     + System.lineSeparator()
                     + "=Id=\t=Name=");
             for (Item cell : item) {
-                System.out.println(cell);
+                out.println(cell);
             }
         } else {
-            System.out.println(System.lineSeparator() + "Nothing found");
+            out.println(System.lineSeparator() + "Nothing found");
         }
         return true;
     }

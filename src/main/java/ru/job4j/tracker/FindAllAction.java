@@ -13,14 +13,14 @@ public class FindAllAction implements UserAction {
     }
     @Override
     public boolean execute(Input input, Tracker tracker) {
-        System.out.println(System.lineSeparator() + "\"=Id=\t=Name=\"");
+        out.println(System.lineSeparator() + "\"=Id=\t=Name=\"");
         Item[] item = tracker.findAll();
         if (item.length != 0) {
             for (Item cell : item) {
-                System.out.println(cell);
+                out.println(cell);
             }
         } else {
-            System.out.println(System.lineSeparator() + "Nothing found");
+            out.println(System.lineSeparator() + "Nothing found");
         }
         return true;
     }
