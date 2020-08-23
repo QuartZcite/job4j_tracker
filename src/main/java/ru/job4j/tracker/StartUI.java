@@ -19,7 +19,7 @@ public class StartUI {
 
     private void showMenu(UserAction[] actions) {
         out.println(System.lineSeparator()
-                + System.lineSeparator()
+//                + System.lineSeparator()
                 + "Menu.");
         for (int index = 0; index < actions.length; index++) {
            out.println(index + ". " + actions[index].name());
