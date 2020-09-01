@@ -220,6 +220,27 @@ public class StartUITest {
     }
 
 
+    @Test
+    public void whenInvalidInputMenu() {
+        Output out = new StubOutput();
+        Input in = new StubInput(
+                new String[] {"2", "0"}
+        );
+        Tracker tracker = new Tracker();
+        UserAction[] actions = {
+                new ExitAction(out)
+        };
+        new StartUI(out).init(in, tracker, actions);
+        assertThat(out.toString(), is(System.lineSeparator()
+                + "Menu." + System.lineSeparator()
+                + "0. Exit program" + System.lineSeparator()
+                + "Wrong input, you can select: 0 .. 0" + System.lineSeparator()
+                + System.lineSeparator()
+                + "Menu." + System.lineSeparator()
+                + "0. Exit program" + System.lineSeparator()
+        ));
+    }
+
 }
 
 
